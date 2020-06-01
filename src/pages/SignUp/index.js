@@ -51,7 +51,6 @@ const Page = () => {
         setDisabled(false);
     }
 
-
     return(
         <PageContainer>
             <PageTitle>Cadastro</PageTitle>
