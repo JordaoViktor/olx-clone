@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PageArea } from './styled';
 import useApi from '../../helpers/OlxAPI';
 import { doLogin } from '../../helpers/AuthHandler';
 
 import { PageContainer, PageTitle, ErrorMessage } from '../../components/MainComponents';
-import { useEffect } from 'react';
 
+
+const api = useApi();
 const Page = () => {
-    const api = useApi();
 
     const [name, setName] = useState('');
     const [stateLoc, setStateLoc] = useState('');
@@ -64,7 +64,7 @@ const Page = () => {
                         <div className="area--title">Nome Completo</div>
                         <div className="area--input">
                             <input
-                                type="email"
+                                type="text"
                                 disabled={disabled}
                                 value={name}
                                 onChange={e=>setName(e.target.value)}
